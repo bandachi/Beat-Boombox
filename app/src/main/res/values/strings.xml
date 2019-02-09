@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HackThe90s</string>
+    <string name="hack_the_90s">Hack The 90s</string>
+    <string name="play_game">Play Game</string>
 </resources>
