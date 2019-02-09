@@ -2,4 +2,7 @@
     <string name="app_name">HackThe90s</string>
     <string name="hack_the_90s">Hack The 90s</string>
     <string name="play_game">Play Game</string>
+    <string name="score">Score:</string>
+    <string name="score_0">Score: 0</string>
+    <string name="combo_0">Combo: 0</string>
 </resources>

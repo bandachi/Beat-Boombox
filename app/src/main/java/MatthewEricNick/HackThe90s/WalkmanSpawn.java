@@ -11,12 +11,14 @@ public class WalkmanSpawn {
     private boolean active = true;
     private Context con;
     private ArrayList<Walkman> walkmanList = new ArrayList<>();
+    private Score score;
 
     private int spawnDelay = 500;
     private Handler spawnWalkman = new Handler();
 
-    WalkmanSpawn(Context con) {
+    WalkmanSpawn(Context con, Score score) {
         this.con = con;
+        this.score = score;
     }
 
     void startSpawning() {
@@ -46,7 +48,7 @@ public class WalkmanSpawn {
 
     private void addRandomWalkman() {
 
-        Walkman walkman = new Walkman(con, (int)(Math.random() * 4));
+        Walkman walkman = new Walkman(con, (int)(Math.random() * 4), score);
         walkman.spawnImage();
         walkman.startMove();
         walkmanList.add(walkman);

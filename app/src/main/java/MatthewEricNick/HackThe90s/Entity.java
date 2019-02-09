@@ -12,12 +12,14 @@ public abstract class Entity {
     float velocityY;
 
     Context con;
+    Score score;
     private boolean active = true;
     ImageView imageView;
     private Handler moveImage = new Handler();
 
-    public Entity(Context con) {
+    public Entity(Context con, Score score) {
         this.con = con;
+        this.score = score;
     }
 
     boolean isColliding(ImageView other) {

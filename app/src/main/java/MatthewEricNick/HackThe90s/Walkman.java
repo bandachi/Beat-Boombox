@@ -11,8 +11,8 @@ class Walkman extends Entity {
     private final float VELOCITY = 20;
     private int direction;
 
-    Walkman(Context con, int direction) {
-        super(con);
+    Walkman(Context con, int direction, Score score) {
+        super(con, score);
         setDirection(direction);
     }
 
@@ -69,6 +69,8 @@ class Walkman extends Entity {
         ImageView boom = ((Activity) con).findViewById(R.id.boomBox);
 
         if (isColliding(boom)) {
+            score.setCombo(0);
+            score.setHealth(score.getHealth() - 1);
             deleteAll();
         }
 

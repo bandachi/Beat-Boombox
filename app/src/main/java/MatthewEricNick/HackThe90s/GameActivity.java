@@ -11,16 +11,18 @@ public class GameActivity extends AppCompatActivity {
     private BoomBox boomBox;
     private WalkmanSpawn walkmanSpawn;
     private ProjectileSpawn projectileSpawn;
+    private Score score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        walkmanSpawn = new WalkmanSpawn(this);
+        score = new Score(this);
+        walkmanSpawn = new WalkmanSpawn(this, score);
         walkmanSpawn.startSpawning();
 
-        projectileSpawn = new ProjectileSpawn(this, walkmanSpawn);
+        projectileSpawn = new ProjectileSpawn(this, walkmanSpawn, score);
 
         boomBox = new BoomBox(this);
     }
@@ -32,5 +34,10 @@ public class GameActivity extends AppCompatActivity {
         projectileSpawn.motion(e);
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        //intentionally empty
     }
 }
