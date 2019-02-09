@@ -31,6 +31,11 @@ public class MainUtility {
         return image;
     }
 
+    public static void removeImage(Context con, ImageView imageView) {
+        ConstraintLayout cl = ((Activity) con).findViewById(R.id.gameLayout);
+        cl.removeView(imageView);
+    }
+
     public static void centerImage(ImageView imageView) {
         imageView.setX(imageView.getX() - imageView.getLayoutParams().width/2);
         imageView.setY(imageView.getY() - imageView.getLayoutParams().height/2);

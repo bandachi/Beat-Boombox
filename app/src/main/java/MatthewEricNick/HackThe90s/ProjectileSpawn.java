@@ -31,11 +31,17 @@ public class ProjectileSpawn {
             case MotionEvent.ACTION_UP:
                 liftedX = e.getX();
                 liftedY = e.getY();
-                Projectile projectile = new Projectile(calcAngle());
+                spawnProjectile();
                 break;
             default:
                 break;
         }
+    }
+
+    private void spawnProjectile() {
+        Projectile projectile = new Projectile(con, calcAngle(), walkmanSpawn.getWalkmanList());
+        projectile.calcAngle();
+        projectile.init();
     }
 
     private float calcAngle() {

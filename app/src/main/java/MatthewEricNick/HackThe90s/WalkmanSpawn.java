@@ -2,6 +2,7 @@ package MatthewEricNick.HackThe90s;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -9,7 +10,7 @@ public class WalkmanSpawn {
 
     private boolean active = true;
     private Context con;
-    private ArrayList<Walkman> projectiles = new ArrayList<>();
+    private ArrayList<Walkman> walkmanList = new ArrayList<>();
 
     private int spawnDelay = 500;
     private Handler spawnWalkman = new Handler();
@@ -48,8 +49,21 @@ public class WalkmanSpawn {
         Walkman walkman = new Walkman(con, (int)(Math.random() * 4));
         walkman.spawnImage();
         walkman.startMove();
-        projectiles.add(walkman);
+        walkmanList.add(walkman);
+        checkInactive();
     }
 
+    private void checkInactive() {
+        for (int i = 0; i < walkmanList.size(); i++) {
+            if (!walkmanList.get(i).getActive()) {
+                walkmanList.remove(i);
+                Log.d("test", Integer.toString(walkmanList.size()));
+            }
+        }
+    }
+
+    ArrayList<Walkman> getWalkmanList() {
+        return walkmanList;
+    }
 
 }
