@@ -59,3 +59,4 @@ public class BoomBox {
         Log.d("angle", Float.toString((float)Math.toDegrees(angle)));
     }
 }
+//testtestetsetsetes
