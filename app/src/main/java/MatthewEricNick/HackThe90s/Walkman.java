@@ -53,7 +53,7 @@ class Walkman {
                 break;
         }
 
-        imageView = MainUtility.addImage(con,"GameLayout", "projectile", x, y);
+        imageView = MainUtility.addImage(con,"GameLayout", "walkman_base", x, y);
         imageView.setLayoutParams(new ConstraintLayout.LayoutParams(200, 200));
         MainUtility.centerImage(imageView);
         imageView.setRotation(180 + (float)Math.toDegrees(getAngle()));

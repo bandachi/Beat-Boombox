@@ -32,30 +32,15 @@ public class BoomBox {
         switch (e.getAction()) {
 
             case MotionEvent.ACTION_DOWN:
-                currentX = e.getX();
-                currentY = e.getY();
                 imageView.setImageResource(con.getResources().getIdentifier("boom_box_base_clicked", "drawable", con.getPackageName()));
                 break;
 
             case MotionEvent.ACTION_UP:
-                liftedX = e.getX();
-                liftedY = e.getY();
                 imageView.setImageResource(con.getResources().getIdentifier("boom_box_base", "drawable", con.getPackageName()));
-                calcAngle();
                 break;
             default:
                 break;
         }
 
-    }
-
-    private void calcAngle() {
-        float differenceX = liftedX - currentX;
-        float differenceY = liftedY - currentY;
-
-        float angle = (float)Math.toDegrees(Math.atan2(differenceY, differenceX));
-
-
-        Log.d("angle", Float.toString((float)Math.toDegrees(angle)));
     }
 }
