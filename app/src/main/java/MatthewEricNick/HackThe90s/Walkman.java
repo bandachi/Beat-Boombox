@@ -2,9 +2,11 @@ package MatthewEricNick.HackThe90s;
 
 import android.content.Context;
 import android.os.Handler;
+import android.support.constraint.ConstraintLayout;
+import android.widget.AbsListView;
 import android.widget.ImageView;
 
-public class Walkman {
+class Walkman {
 
     private final float VELOCITY = 5;
 
@@ -16,7 +18,7 @@ public class Walkman {
     private float velocityX;
     private float velocityY;
 
-    private Handler moveImage;
+    private Handler moveImage = new Handler();
 
     Walkman(Context con, int direction) {
         this.con = con;
@@ -26,14 +28,20 @@ public class Walkman {
 
     void spawnImage(int x, int y) {
         imageView = MainUtility.addImage(con,"GameLayout", "boom_box_base", x, y);
+        imageView.setLayoutParams(new ConstraintLayout.LayoutParams(200, 200));
     }
 
-    void calcVelocity() {
-
+    void spawnImage() {
+        imageView = MainUtility.addImage(con,"GameLayout", "boom_box_base", 200, 200);
+        imageView.setLayoutParams(new ConstraintLayout.LayoutParams(200, 200));
     }
 
-    void move() {
+    void startMove() {
+        runnableMoveImage.run();
+    }
 
+    void stopMove() {
+        moveImage.removeCallbacksAndMessages(null);
     }
 
     void setDirection(int direction) {
@@ -50,8 +58,14 @@ public class Walkman {
         public void run() {
 
             if (active) {
-
+                imageView.setX(imageView.getX() + velocityX);
+                imageView.setY(imageView.getY() + velocityY);
+                moveImage.postDelayed(this, 20);
             }
+            else {
+                stopMove();
+            }
+
         }
     };
 }

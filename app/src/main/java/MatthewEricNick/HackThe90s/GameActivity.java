@@ -19,8 +19,14 @@ public class GameActivity extends AppCompatActivity {
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         boomBox.motion(e);
-        Walkman test = new Walkman(this, 0);
-        test.spawnImage(500, 500);
+
+        for (int i = 0; i < 8; i++) {
+            Walkman something = new Walkman(this, i);
+
+            something.spawnImage(500, 500);
+            something.startMove();
+        }
+
         return true;
     }
 }
