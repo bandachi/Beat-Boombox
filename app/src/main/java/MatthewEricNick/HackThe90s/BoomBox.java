@@ -2,8 +2,10 @@ package MatthewEricNick.HackThe90s;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class BoomBox {
 
@@ -39,11 +41,11 @@ public class BoomBox {
                 liftedX = e.getX();
                 liftedY = e.getY();
                 imageView.setImageResource(con.getResources().getIdentifier("boom_box_base", "drawable", con.getPackageName()));
+                calcAngle();
                 break;
             default:
                 break;
         }
-        calcAngle();
 
     }
 
@@ -51,5 +53,9 @@ public class BoomBox {
         float differenceX = liftedX - currentX;
         float differenceY = liftedY - currentY;
 
+        float angle = (float)Math.toDegrees(Math.atan2(differenceY, differenceX));
+
+
+        Log.d("angle", Float.toString((float)Math.toDegrees(angle)));
     }
 }
