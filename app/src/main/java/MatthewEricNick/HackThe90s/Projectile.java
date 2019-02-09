@@ -46,7 +46,6 @@ class Projectile extends Entity {
                 score.setScore(score.getScore() + 90);
                 score.setCombo(score.getCombo() + 1);
             }
-
         }
     }
 

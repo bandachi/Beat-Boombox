@@ -70,6 +70,7 @@ class Walkman extends Entity {
 
         if (isColliding(boom)) {
             score.setCombo(0);
+            score.setHealth(score.getHealth() - 1);
             deleteAll();
         }
 

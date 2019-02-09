@@ -12,12 +12,6 @@ public class BoomBox {
     private Context con;
     private ImageView imageView;
 
-    private float currentX = 0;
-    private float currentY = 0;
-
-    private float liftedX = 0;
-    private float liftedY = 0;
-
     BoomBox(Context con) {
         this.con = con;
         init();
@@ -44,5 +38,3 @@ public class BoomBox {
 
     }
 }
-//testtestetsetsetes
-//test test test
