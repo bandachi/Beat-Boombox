@@ -31,6 +31,11 @@ public class MainUtility {
         return image;
     }
 
+    public static void centerImage(ImageView imageView) {
+        imageView.setX(imageView.getX() - imageView.getLayoutParams().width/2);
+        imageView.setY(imageView.getY() - imageView.getLayoutParams().height/2);
+    }
+
     public static int getScreenWidth(Context con) {
         return con.getResources().getDisplayMetrics().widthPixels;
     }

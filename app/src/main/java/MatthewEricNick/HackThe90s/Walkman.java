@@ -3,7 +3,6 @@ package MatthewEricNick.HackThe90s;
 import android.content.Context;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
-import android.widget.AbsListView;
 import android.widget.ImageView;
 
 class Walkman {
@@ -26,11 +25,6 @@ class Walkman {
         active = true;
     }
 
-    void spawnImage(int x, int y) {
-        imageView = MainUtility.addImage(con,"GameLayout", "boom_box_base", x, y);
-        imageView.setLayoutParams(new ConstraintLayout.LayoutParams(200, 200));
-    }
-
     void spawnImage() {
 
         float x;
@@ -39,18 +33,18 @@ class Walkman {
         switch (direction) {
             case 0:
                 x = MainUtility.getScreenWidth(con)/2;
-                y = 0;
+                y = -MainUtility.getScreenHeight(con)/10;
                 break;
             case 1:
-                x = MainUtility.getScreenWidth(con);
+                x = MainUtility.getScreenWidth(con) + MainUtility.getScreenWidth(con)/10;
                 y = MainUtility.getScreenHeight(con)/2;
                 break;
             case 2:
                 x = MainUtility.getScreenWidth(con)/2;
-                y = MainUtility.getScreenHeight(con);
+                y = MainUtility.getScreenHeight(con) + MainUtility.getScreenHeight(con)/10;
                 break;
             case 3:
-                x = 0;
+                x = -MainUtility.getScreenWidth(con)/10;
                 y = MainUtility.getScreenHeight(con)/2;
                 break;
             default:
@@ -59,8 +53,10 @@ class Walkman {
                 break;
         }
 
-        imageView = MainUtility.addImage(con,"GameLayout", "boom_box_base", x, y);
+        imageView = MainUtility.addImage(con,"GameLayout", "projectile", x, y);
         imageView.setLayoutParams(new ConstraintLayout.LayoutParams(200, 200));
+        MainUtility.centerImage(imageView);
+        imageView.setRotation(180 + (float)Math.toDegrees(getAngle()));
     }
 
     void startMove() {
