@@ -40,16 +40,11 @@ class Projectile extends Entity {
     private void checkCollision() {
 
         for (int i = 0; i < walkmanList.size(); i++) {
-            Rect projectileRect = new Rect();
-            Rect walkmanRect = new Rect();
-
-            imageView.getHitRect(projectileRect);
-            walkmanList.get(i).imageView.getHitRect(walkmanRect);
-
-            if (projectileRect.intersect(walkmanRect)) {
+            if (isColliding(walkmanList.get(i).imageView)) {
                 this.deleteAll();
                 walkmanList.get(i).deleteAll();
             }
+
         }
     }
 

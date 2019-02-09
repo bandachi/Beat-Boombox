@@ -1,5 +1,6 @@
 package MatthewEricNick.HackThe90s;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
@@ -58,8 +59,19 @@ class Walkman extends Entity {
 
         float angle = getAngle();
 
-        velocityX = -VELOCITY * (float)Math.sin(angle);
+        velocityX = -(VELOCITY * (float)Math.sin(angle))/2;
         velocityY = VELOCITY * (float)Math.cos(angle);
+    }
+
+    @Override
+    void checkBoundaries() {
+        super.checkBoundaries();
+        ImageView boom = ((Activity) con).findViewById(R.id.boomBox);
+
+        if (isColliding(boom)) {
+            deleteAll();
+        }
+
     }
 
     @Override

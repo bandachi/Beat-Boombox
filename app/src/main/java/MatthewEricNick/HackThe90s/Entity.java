@@ -1,6 +1,7 @@
 package MatthewEricNick.HackThe90s;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
@@ -17,6 +18,17 @@ public abstract class Entity {
 
     public Entity(Context con) {
         this.con = con;
+    }
+
+    boolean isColliding(ImageView other) {
+        Rect thisRect = new Rect();
+        Rect otherRect = new Rect();
+
+        imageView.getHitRect(thisRect);
+        other.getHitRect(otherRect);
+
+        return thisRect.intersect(otherRect);
+
     }
 
     void startMove() {
