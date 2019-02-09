@@ -32,7 +32,34 @@ class Walkman {
     }
 
     void spawnImage() {
-        imageView = MainUtility.addImage(con,"GameLayout", "boom_box_base", 200, 200);
+
+        float x;
+        float y;
+
+        switch (direction) {
+            case 0:
+                x = MainUtility.getScreenWidth(con)/2;
+                y = 0;
+                break;
+            case 1:
+                x = MainUtility.getScreenWidth(con);
+                y = MainUtility.getScreenHeight(con)/2;
+                break;
+            case 2:
+                x = MainUtility.getScreenWidth(con)/2;
+                y = MainUtility.getScreenHeight(con);
+                break;
+            case 3:
+                x = 0;
+                y = MainUtility.getScreenHeight(con)/2;
+                break;
+            default:
+                x = 0;
+                y = 0;
+                break;
+        }
+
+        imageView = MainUtility.addImage(con,"GameLayout", "boom_box_base", x, y);
         imageView.setLayoutParams(new ConstraintLayout.LayoutParams(200, 200));
     }
 
@@ -44,13 +71,17 @@ class Walkman {
         moveImage.removeCallbacksAndMessages(null);
     }
 
+    private float getAngle() {
+        return direction * (float)Math.PI/2;
+    }
+
     void setDirection(int direction) {
         this.direction = direction;
 
-        float angle = direction * 45;
+        float angle = getAngle();
 
         velocityX = -VELOCITY * (float)Math.sin(angle);
-        velocityY = -VELOCITY * (float)Math.cos(angle);
+        velocityY = VELOCITY * (float)Math.cos(angle);
     }
 
     private Runnable runnableMoveImage = new Runnable() {

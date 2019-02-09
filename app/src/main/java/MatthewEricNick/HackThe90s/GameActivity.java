@@ -20,10 +20,10 @@ public class GameActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent e) {
         boomBox.motion(e);
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 4; i++) {
             Walkman something = new Walkman(this, i);
 
-            something.spawnImage(500, 500);
+            something.spawnImage();
             something.startMove();
         }
 

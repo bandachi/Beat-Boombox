@@ -30,4 +30,12 @@ public class MainUtility {
 
         return image;
     }
+
+    public static int getScreenWidth(Context con) {
+        return con.getResources().getDisplayMetrics().widthPixels;
+    }
+
+    public static int getScreenHeight(Context con) {
+        return con.getResources().getDisplayMetrics().heightPixels;
+    }
 }
