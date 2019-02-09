@@ -12,8 +12,8 @@ class Projectile extends Entity {
     private float angle;
     private ArrayList<Walkman> walkmanList;
 
-    Projectile(Context con, float angle, ArrayList<Walkman> walkmanList) {
-        super(con);
+    Projectile(Context con, float angle, ArrayList<Walkman> walkmanList, Score score) {
+        super(con, score);
         this.angle = angle;
         this.walkmanList = walkmanList;
     }
@@ -43,6 +43,8 @@ class Projectile extends Entity {
             if (isColliding(walkmanList.get(i).imageView)) {
                 this.deleteAll();
                 walkmanList.get(i).deleteAll();
+                score.setScore(score.getScore() + 90);
+                score.setCombo(score.getCombo() + 1);
             }
 
         }
