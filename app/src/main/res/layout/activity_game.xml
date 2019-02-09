@@ -36,8 +36,8 @@
 
     <ImageView
         android:id="@+id/backgroundScore"
-        android:layout_width="185dp"
-        android:layout_height="59dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -46,13 +46,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/number_box" />
 
     <ImageView
         android:id="@+id/backgroundCombo"
-        android:layout_width="185dp"
-        android:layout_height="59dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056"
+        app:layout_constraintVertical_bias="0.051"
         app:srcCompat="@drawable/number_box" />
 
     <TextView
@@ -70,40 +70,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif-monospace"
         android:text="@string/score_0"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundScore"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundScore"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toStartOf="@+id/backgroundScore"
+        app:layout_constraintTop_toTopOf="@+id/backgroundScore"
+        app:layout_constraintVertical_bias="0.608" />
 
     <TextView
         android:id="@+id/comboText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="serif-monospace"
         android:text="@string/combo_0"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundCombo"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundCombo"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="@+id/backgroundCombo"
+        app:layout_constraintTop_toTopOf="@+id/backgroundCombo"
+        app:layout_constraintVertical_bias="0.565" />
 
     <ImageView
         android:id="@+id/heart1"

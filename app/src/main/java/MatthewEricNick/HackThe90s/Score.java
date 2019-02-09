@@ -2,6 +2,7 @@ package MatthewEricNick.HackThe90s;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +42,9 @@ class Score {
                 setFullHeart(heart2);
                 setFullHeart(heart3);
                 break;
+
+            case 0:
+                gameOver();
             default:
                 setEmptyHeart(heart1);
                 setEmptyHeart(heart2);
@@ -56,6 +60,13 @@ class Score {
 
     private void setFullHeart(ImageView heart) {
         heart.setImageResource(con.getResources().getIdentifier("heart", "drawable", con.getPackageName()));
+    }
+
+    private void gameOver() {
+        Intent intent = new Intent(con, GameOverLose.class);
+        intent.putExtra(GameOverLose.SCORE_PASS, score);
+        intent.putExtra(GameOverLose.COMBO_PASS, combo);
+        con.startActivity(intent);
     }
 
     int getScore() {
