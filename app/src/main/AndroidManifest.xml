@@ -17,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameOverLose"></activity>
+        <activity android:name=".GameOverLose" />
+        <activity android:name=".Story" />
+        <activity android:name=".Instructions"></activity>
     </application>
 
 </manifest>
