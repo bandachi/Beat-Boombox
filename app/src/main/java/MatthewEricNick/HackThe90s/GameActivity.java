@@ -21,10 +21,10 @@ public class GameActivity extends AppCompatActivity {
         score = new Score(this);
         walkmanSpawn = new WalkmanSpawn(this, score);
         walkmanSpawn.startSpawning();
-
-        projectileSpawn = new ProjectileSpawn(this, walkmanSpawn, score);
-
         boomBox = new BoomBox(this);
+        projectileSpawn = new ProjectileSpawn(this, walkmanSpawn, score, boomBox);
+
+
     }
 
     @Override

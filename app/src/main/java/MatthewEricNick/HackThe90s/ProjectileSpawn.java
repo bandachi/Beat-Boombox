@@ -22,12 +22,13 @@ public class ProjectileSpawn {
 
     private boolean coolDown;
     private Handler shootDelay = new Handler();
+    private BoomBox boomBox;
 
-    ProjectileSpawn(Context con, WalkmanSpawn walkmanSpawn, Score score) {
+    ProjectileSpawn(Context con, WalkmanSpawn walkmanSpawn, Score score, BoomBox boomBox) {
         this.con = con;
         this.walkmanSpawn = walkmanSpawn;
         this.score = score;
-
+        this.boomBox = boomBox;
         soundUtility = new SoundUtility(con);
     }
 
@@ -58,13 +59,13 @@ public class ProjectileSpawn {
 
     private void spawnProjectile() {
 
-        if (!coolDown) {
+        if (!coolDown && !boomBox.getReversed()) {
             Projectile projectile = new Projectile(con, calcAngle(), walkmanSpawn.getWalkmanList(), score);
             projectile.calcAngle();
             projectile.init();
             soundUtility.playProjectileShoot();
-            coolDown = true;
-            shootDelay.postDelayed(runnableDelay, 300);
+          //  coolDown = true;
+
         }
     }
 

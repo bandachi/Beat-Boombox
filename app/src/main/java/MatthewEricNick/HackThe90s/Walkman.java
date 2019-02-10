@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 class Walkman extends Entity {
 
-    private final float VELOCITY = 20;
+    private final float VELOCITY = 12;
     private int direction;
 
     Walkman(Context con, int direction, Score score) {

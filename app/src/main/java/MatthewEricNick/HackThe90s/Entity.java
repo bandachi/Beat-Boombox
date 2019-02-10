@@ -46,7 +46,6 @@ public abstract class Entity {
         MainUtility.removeImage(con, imageView);
         stopMove();
         delete();
-        Log.d("delete", "deleted");
     }
 
     abstract void delete();
@@ -68,7 +67,7 @@ public abstract class Entity {
                 checkBoundaries();
                 imageView.setX(imageView.getX() + velocityX);
                 imageView.setY(imageView.getY() + velocityY);
-                moveImage.postDelayed(this, 30);
+                moveImage.postDelayed(this, 20);
             }
             else {
                 deleteAll();

@@ -14,10 +14,10 @@ public class BoomBox {
     private ImageView imageView;
 
     private Handler firstFrame = new Handler();
-    private Handler secondFrame = new Handler();
 
     private boolean fingerHeld = false;
-    private int counter = 1;
+    private boolean reversed = false;
+    private int counter = 4;
 
     BoomBox(Context con) {
         this.con = con;
@@ -62,46 +62,28 @@ public class BoomBox {
 
                 imageView.setImageResource(con.getResources().getIdentifier(currentFrame, "drawable", con.getPackageName()));
 
-                if (counter < 6) {
-                    counter++;
-                    firstFrame.postDelayed(this, 100);
-                }
-                else {
-                    firstFrame.removeCallbacksAndMessages(null);
-                    playSecondAnimation();
+                if (counter < 2 || counter > 5) {
+                    reversed = !reversed;
                 }
 
+                if (!reversed) {
+                    counter--;
+                }
+                else {
+                    counter++;
+                }
+                firstFrame.postDelayed(this, 100);
 
             }
         }, 0);
 
     }
 
-    private void playSecondAnimation() {
+    int getCounter() {
+       return counter;
+    }
 
-        secondFrame.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-
-                String currentFrame = "boom_box_";
-                if (fingerHeld) {
-                    currentFrame += "clicked_";
-                }
-
-                currentFrame += counter;
-
-                imageView.setImageResource(con.getResources().getIdentifier(currentFrame, "drawable", con.getPackageName()));
-
-                if (counter > 1) {
-                    counter--;
-                    secondFrame.postDelayed(this, 100);
-                }
-                else {
-                    secondFrame.removeCallbacksAndMessages(null);
-                    playAnimation();
-                }
-            }
-        }, 0);
+    boolean getReversed() {
+        return reversed;
     }
 }

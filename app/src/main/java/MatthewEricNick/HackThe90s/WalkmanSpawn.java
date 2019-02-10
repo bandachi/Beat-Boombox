@@ -13,7 +13,7 @@ public class WalkmanSpawn {
     private ArrayList<Walkman> walkmanList = new ArrayList<>();
     private Score score;
 
-    private int spawnDelay = 500;
+    private int spawnDelay = 800;
     private Handler spawnWalkman = new Handler();
 
     WalkmanSpawn(Context con, Score score) {
@@ -36,7 +36,7 @@ public class WalkmanSpawn {
         public void run() {
 
             if (active) {
-               // addRandomWalkman();
+                addRandomWalkman();
                 spawnWalkman.postDelayed(this, spawnDelay);
             }
             else {
