@@ -2,6 +2,7 @@ package MatthewEricNick.HackThe90s;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.SoundPool;
 import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -15,34 +16,19 @@ public class BoomBox {
 
     private Handler firstFrame = new Handler();
 
-    private boolean fingerHeld = false;
+    private SoundUtility soundUtility;
     private boolean reversed = false;
     private int counter = 4;
 
     BoomBox(Context con) {
         this.con = con;
         init();
+        soundUtility = new SoundUtility(con);
     }
 
     private void init() {
         imageView = ((Activity) con).findViewById(R.id.boomBox);
         playAnimation();
-    }
-
-    void motion(MotionEvent e) {
-
-        switch (e.getAction()) {
-
-            case MotionEvent.ACTION_DOWN:
-                fingerHeld = true;
-                break;
-
-            case MotionEvent.ACTION_UP:
-                fingerHeld = false;
-                break;
-            default:
-                break;
-        }
 
     }
 
@@ -54,7 +40,7 @@ public class BoomBox {
             public void run() {
 
                 String currentFrame = "boom_box_";
-                if (fingerHeld) {
+                if (!reversed) {
                     currentFrame += "clicked_";
                 }
 
@@ -63,7 +49,9 @@ public class BoomBox {
                 imageView.setImageResource(con.getResources().getIdentifier(currentFrame, "drawable", con.getPackageName()));
 
                 if (counter < 2 || counter > 5) {
+
                     reversed = !reversed;
+                    soundUtility.playBeat();
                 }
 
                 if (!reversed) {
@@ -72,7 +60,16 @@ public class BoomBox {
                 else {
                     counter++;
                 }
-                firstFrame.postDelayed(this, 100);
+
+                int delay;
+                if (reversed) {
+                    delay = 50;
+                }
+                else {
+                    delay = 100;
+                }
+
+                firstFrame.postDelayed(this, delay);
 
             }
         }, 0);

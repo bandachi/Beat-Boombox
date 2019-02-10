@@ -29,7 +29,6 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        boomBox.motion(e);
 
         projectileSpawn.motion(e);
 
