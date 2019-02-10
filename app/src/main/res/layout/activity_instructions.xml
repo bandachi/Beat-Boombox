@@ -13,7 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Swipe the screen to direct sound waves to destroy the onslaught of walkmans. Every walkman destroyed adds 90 to your score. Don't let the walkmans reach you or you'll lose health. Lose all your health and you lose the game."
+        android:text="Swipe the screen while the boombox is glowing blue to direct sound waves to destroy the onslaught of walkmans. Every walkman destroyed adds 90 to your score. Don't let the walkmans reach you or you'll lose health. Lose all your health and you lose the game."
         android:textSize="27dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
