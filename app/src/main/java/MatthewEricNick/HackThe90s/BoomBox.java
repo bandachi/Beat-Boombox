@@ -12,6 +12,8 @@ public class BoomBox {
     private Context con;
     private ImageView imageView;
 
+    private
+
     BoomBox(Context con) {
         this.con = con;
         init();

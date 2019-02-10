@@ -9,6 +9,7 @@ import android.widget.TextView;
 class Score {
 
     private int score = 0;
+    private int maxCombo = 0;
     private int combo = 0;
     private int health = 3;
     private Context con;
@@ -65,7 +66,7 @@ class Score {
     private void gameOver() {
         Intent intent = new Intent(con, GameOverLose.class);
         intent.putExtra(GameOverLose.SCORE_PASS, score);
-        intent.putExtra(GameOverLose.COMBO_PASS, combo);
+        intent.putExtra(GameOverLose.COMBO_PASS, maxCombo + 1);
         con.startActivity(intent);
     }
 
@@ -75,6 +76,11 @@ class Score {
 
     void setScore(int score) {
         this.score = score;
+
+        if (maxCombo <= combo) {
+            maxCombo = combo;
+        }
+
         updateScore();
     }
 
