@@ -15,8 +15,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeToGame(View view) {
-        findViewById(R.id.playButton).setAlpha(0.5f);
+        //findViewById(R.id.playButton).setAlpha(0.5f);
         Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
+    public void changeToStory(View view) {
+        //findViewById(R.id.playButton).setAlpha(0.5f);
+        Intent intent = new Intent(this, Story.class);
+        startActivity(intent);
+    }
+    public void changeToInstructions(View view) {
+        //findViewById(R.id.playButton).setAlpha(0.5f);
+        Intent intent = new Intent(this, Instructions.class);
         startActivity(intent);
     }
 
