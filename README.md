@@ -1,5 +1,9 @@
 Beat Boom Box
 
+This project was made purely on android studio for the Hack The 90s hackathon
+Sprites and all images were made by @bandachi 
+
+Description:
 Greetings bodacious Boombox. You were chosen by urban teens to unite their scattered peoples.
 Oh mighty Boombox, you were first made in 1966 by Philips .
 You were popular from 1970 to the late 1990s, until the rise of more compact audio playback devices like the walkman.
