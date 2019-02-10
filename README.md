@@ -1,6 +1,7 @@
 Beat Boom Box
 
-This project was made purely on android studio for the Hack The 90s hackathon
+This project was made purely on android studio for the Hack The 90s hackathon.
+
 Sprites and all images were made by @bandachi 
 
 Description:
