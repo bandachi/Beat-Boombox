@@ -45,7 +45,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Greetings bodacious Boombox. You were chosen by urban teens to unite their scattered peoples. Oh mighty Boombox, you were first made in 1966 by Philips . You were popular from 1970 to the late 1990s, until the rise of more compact audio playback devices like the walkman.
-Oh loud and robust Boombox, hipsters wish for your rise own once more and require a device of unparalleled style! Will you answer their call? Will you build an industry that stands the test of time?"
+Oh loud and robust Boombox, hipsters wish for your rise once more and require a device of unparalleled style! Will you answer their call? Will you build an industry that stands the test of time?"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
