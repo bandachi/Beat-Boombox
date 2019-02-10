@@ -36,7 +36,7 @@ public class WalkmanSpawn {
         public void run() {
 
             if (active) {
-                addRandomWalkman();
+               // addRandomWalkman();
                 spawnWalkman.postDelayed(this, spawnDelay);
             }
             else {

@@ -11,7 +11,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 public class GameOverLose extends AppCompatActivity {
-
     final static String SCORE_PASS = "score pass";
     final static String COMBO_PASS = "combo pass";
 
