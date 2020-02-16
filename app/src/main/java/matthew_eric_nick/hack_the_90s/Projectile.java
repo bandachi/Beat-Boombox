@@ -1,7 +1,6 @@
-package MatthewEricNick.HackThe90s;
+package matthew_eric_nick.hack_the_90s;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.support.constraint.ConstraintLayout;
 
 import java.util.ArrayList;

@@ -1,8 +1,7 @@
-package MatthewEricNick.HackThe90s;
+package matthew_eric_nick.hack_the_90s;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.widget.ImageView;
 

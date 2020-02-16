@@ -1,9 +1,8 @@
-package MatthewEricNick.HackThe90s;
+package matthew_eric_nick.hack_the_90s;
 
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ImageView;
 
 public abstract class Entity {

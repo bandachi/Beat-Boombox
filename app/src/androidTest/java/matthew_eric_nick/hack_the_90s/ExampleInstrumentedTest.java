@@ -1,4 +1,4 @@
-package MatthewEricNick.HackThe90s;
+package matthew_eric_nick.hack_the_90s;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

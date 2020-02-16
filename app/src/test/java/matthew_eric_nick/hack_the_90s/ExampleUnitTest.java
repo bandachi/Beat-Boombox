@@ -1,4 +1,4 @@
-package MatthewEricNick.HackThe90s;
+package matthew_eric_nick.hack_the_90s;
 
 import org.junit.Test;
 
